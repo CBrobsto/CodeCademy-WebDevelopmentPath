@@ -47,19 +47,56 @@ nav a {
 
 #mission {
     width: 1200px;
-}
-
-#mission img {
     height: 700px;
-    margin-top: 70px;    
+    padding-top: 70px;
+    background-image: url("./resources/img-mission-background.jpg");
+    align-items: center;
 }
 
-#misison h2 {
-    z-index: 1;
+h2, h4 {
     flex-direction: column;
+    background-color: black;
+    margin: 0px;
+    width: 1200px;
+    padding: 10px;
 }
 
-img .tea-card {
+.store {
+    width: 1000px;
+    height: 700px;
+}
+
+.tea-card {
+    flex-direction: row;
+    margin: 10px;
+}
+
+.tea-card img {
     height: 200px;
     width: 300px;
 }
+
+#locations {
+    background-image: url("./resources/img-locations-background.jpg");
+    width: 1200px;
+    height: 500px;
+    padding-top: 70px;
+    align-items: center;
+}
+
+#locations h2 {
+    background-color: transparent;
+}
+
+.location-card {
+    width: 300px;
+    height: auto;
+    background-color: black;
+    margin-top: 15px;
+    padding: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    flex-direction: row;
+}
+
+
