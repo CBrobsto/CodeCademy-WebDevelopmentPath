@@ -7,10 +7,10 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <header class="flex-container">
+    <header class="flex-container-row">
         <img id="logo" src="./resources/img-tea-cozy-logo.png" alt="Tea Cozy logo">
-        <nav>
-            <ul class="navlinks"> 
+        <nav id="navbar"> 
+            <ul class="navlinks flex-container-row"> 
                 <li><a href="#mission">Mission</a></li>
                 <li><a href="#featured">Featured Tea</a></li>
                 <li><a href="#locations">Locations</a></li>
@@ -18,7 +18,7 @@
         </nav>
     </header>
     <main>
-        <section id="mission" class="flex-container">
+        <section id="mission">
             <article>
                 <a name="mission"></a>
                 <h2>Our Mission</h2>
@@ -30,7 +30,7 @@
                 <a name="featured"></a>
                 <h2>Tea of the Month</h2>
                 <h4>What's Steeping at The Tea Cozy?</h4>
-                <div class="flex-container store">
+                <div class="tea-store">
                     <div class="tea-card">
                         <img src="./resources/img-berryblitz.jpg" alt="Berry Tea">
                         <p>Fall Berry Blitz Tea</p>
@@ -58,7 +58,7 @@
             <article>
                 <a name="locations"></a>
                 <h2>Locations</h2>
-                <div class="flex-container location-card-box">
+                <div id="location-card-box">
                     <div class="location-card">
                         <h3>Downtown</h3>
                         <p>384 West 4th St</p>
@@ -82,12 +82,12 @@
         </section>
     </main>
     <footer>
-        <div>
+        <div id="contact-info">
             <h2>The Tea Cozy</h2>
             <h5>contact@theteacozy.com</h5>
             <h5>917-555-8904</h5>
         </div>
-        <div>
+        <div id="copyright">
             <h5>copyright The Tea Cozy 2017</h5>
         </div>
     </footer>
