@@ -61,6 +61,13 @@ const _ = {
             }
         }
         return undefined;
+    },
+    drop(array, numOfItems = 1) {
+        let newArray = array;
+        if (numOfItems > 0) {
+            newArray = array.slice(numOfItems);
+        }
+        return newArray;
     }
 };
 
