@@ -4,12 +4,20 @@ body {
     background-color: black;
     font-size: 22px;
     text-align: center;
-    flex-flow: column, nowrap;
     margin: 0;
 }
 
-.flex-container {
+main {
     display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+.flex-container-row {
+    display: flex;
+    flex-flow: row, wrap;
+    justify-content: space-between;
+    align-content: center;
 }
 
 header {
@@ -50,25 +58,40 @@ nav a {
     height: 700px;
     padding-top: 70px;
     background-image: url("./resources/img-mission-background.jpg");
-    align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
-h2, h4 {
-    flex-direction: column;
+#mission {
+    display: flex;
+    justify-content: center;
+}
+
+#mission h2, #mission h4 {
     background-color: black;
-    margin: 0px;
     width: 1200px;
     padding: 10px;
+    margin: 0;
 }
 
-.store {
+.tea-store {
     width: 1000px;
-    height: 700px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: flex-start;
+    flex-wrap: wrap;
 }
 
 .tea-card {
-    flex-direction: row;
-    margin: 10px;
+    margin: 0 10px 30px 10px;
+}
+
+.tea-card p {
+    margin: 0;
 }
 
 .tea-card img {
@@ -81,11 +104,16 @@ h2, h4 {
     width: 1200px;
     height: 500px;
     padding-top: 70px;
-    align-items: center;
+    margin-top: 20px;
 }
 
 #locations h2 {
     background-color: transparent;
+}
+
+#location-card-box {
+    display: flex;
+    flex-flow: row, wrap;
 }
 
 .location-card {
@@ -96,7 +124,17 @@ h2, h4 {
     padding: 10px;
     margin-left: 20px;
     margin-right: 20px;
-    flex-direction: row;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#copyright {
+    align-self: flex-start;
+    margin-left: 20px;
 }
 
 /* justify-content = main axis */
