@@ -52,6 +52,9 @@ const _ = {
             newObject[values[i]] = keys[i];
         }
         return newObject;
+    }, 
+    findKey(object, predicate) {
+        return -1; 
     }
 };
 
