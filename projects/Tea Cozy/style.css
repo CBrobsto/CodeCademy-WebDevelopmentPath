@@ -135,6 +135,3 @@ footer {
     align-self: flex-start;
     margin-left: 20px;
 }
-
-/* justify-content = main axis */
-/* align-items = cross axis (no need to do separate vertical and horizontal containers) */
