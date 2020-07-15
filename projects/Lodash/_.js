@@ -68,6 +68,12 @@ const _ = {
             newArray = array.slice(numOfItems);
         }
         return newArray;
+    },
+    dropWhile(array, predicate) {
+        let dropNumber = array.findIndex( (element, index) => {
+            return !predicate(element, index, array);
+        });
+        return this.drop(array, dropNumber);
     }
 };
 
