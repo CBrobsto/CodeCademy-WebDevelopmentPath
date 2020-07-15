@@ -52,9 +52,17 @@ const _ = {
             newObject[values[i]] = keys[i];
         }
         return newObject;
+    },
+    findKey(object, predicate) {
+        for (let key in object) {
+            let value = object.key;
+            if (predicate(value)) {
+                return key;
+            }
+        }
+        return undefined;
     }
 };
-
 
 // Do not write or modify code below this line.
 module.exports = _;
