@@ -74,6 +74,13 @@ const _ = {
             return !predicate(element, index, array);
         });
         return this.drop(array, dropNumber);
+    },
+    chunk(array, chunkSize = 1) {
+        let chunkedArray = [];
+        for (let i=0; i<array.length; i=i+chunkSize) {
+            chunkedArray.push(array.slice(i, i+chunkSize))
+        }
+        return chunkedArray;
     }
 };
 
