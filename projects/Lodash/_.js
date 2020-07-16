@@ -61,6 +61,26 @@ const _ = {
             }
         }
         return undefined;
+    },
+    drop(array, numOfItems = 1) {
+        let newArray = array;
+        if (numOfItems > 0) {
+            newArray = array.slice(numOfItems);
+        }
+        return newArray;
+    },
+    dropWhile(array, predicate) {
+        let dropNumber = array.findIndex( (element, index) => {
+            return !predicate(element, index, array);
+        });
+        return this.drop(array, dropNumber);
+    },
+    chunk(array, chunkSize = 1) {
+        let chunkedArray = [];
+        for (let i=0; i<array.length; i=i+chunkSize) {
+            chunkedArray.push(array.slice(i, i+chunkSize))
+        }
+        return chunkedArray;
     }
 };
 
