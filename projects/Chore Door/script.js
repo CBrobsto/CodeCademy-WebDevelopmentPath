@@ -6,8 +6,17 @@ const botDoorPath = "https://s3.amazonaws.com/codecademy-content/projects/chore-
 const beachDoorPath = "https://s3.amazonaws.com/codecademy-content/projects/chore-door/images/beach.svg";
 const spaceDoorPath = "https://s3.amazonaws.com/codecademy-content/projects/chore-door/images/space.svg";
 const closedDoorPath = "https://s3.amazonaws.com/codecademy-content/projects/chore-door/images/closed_door.svg";
-let numClosedDoors = 3;
+let numClosedDoors;
 let openDoor1, openDoor2, openDoor3;
+let currentlyPlaying = false;
+
+const isBot = (door) => {
+  if (door.src === botDoorPath) {
+    return true;
+  } else {
+    return false;
+  }
+};
 
 const isClicked = (door) => {
   if (door.src === closedDoorPath) {
@@ -17,12 +26,12 @@ const isClicked = (door) => {
   }
 };
 
-const playDoor = () => {
+const playDoor = (door) => {
   numClosedDoors--;
   if (numClosedDoors === 0) {
     gameOver('win');
-  } else {
-
+  } else if (isBot(door)) {
+    gameOver();
   }
 };
 
@@ -44,28 +53,46 @@ const randomChoreDoorGenerator = () => {
 };
 
 doorImage1.onclick = () => {
-  if (!isClicked(doorImage1)) {
+  if (currentlyPlaying && !isClicked(doorImage1)) {
     doorImage1.src = openDoor1;
-    playDoor();
+    playDoor(doorImage1);
   }
 };
 doorImage2.onclick = () => {
-  if (!isClicked(doorImage2)) {
+  if (currentlyPlaying && !isClicked(doorImage2)) {
     doorImage2.src = openDoor2;
-    playDoor();
+    playDoor(doorImage2);
   }
 };
 doorImage3.onclick = () => {
-  if (!isClicked(doorImage3)) {
+  if (currentlyPlaying && !isClicked(doorImage3)) {
     doorImage3.src = openDoor3;
-    playDoor();
+    playDoor(doorImage3);
+  }
+};
+startButton.onclick = () => {
+  startRound();
+};
+
+const startRound = () => {
+  if (currentlyPlaying === false) {
+    numClosedDoors = 3;
+    doorImage1.src = closedDoorPath;
+    doorImage2.src = closedDoorPath;
+    doorImage3.src = closedDoorPath;
+    startButton.innerHTML = 'Good luck!';
+    currentlyPlaying = true;
+    randomChoreDoorGenerator();
   }
 };
 
 const gameOver = (status) => {
   if (status === 'win') {
-    startButton.innerHTML = 'You win! Play again?'
+    startButton.innerHTML = 'You win! Play again?';
+  } else {
+    startButton.innerHTML = 'Game over! Play again?';
   }
+  currentlyPlaying = false;
 };
 
-randomChoreDoorGenerator();
+startRound();
