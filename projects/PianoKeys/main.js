@@ -3,10 +3,18 @@ const keys = ['c-key', 'd-key', 'e-key', 'f-key', 'g-key', 'a-key', 'b-key', 'hi
 const notes = [];
 keys.forEach(function(key){
   notes.push(document.getElementById(key));
-})
+});
+
+const grey = '#808080';
 
 // Write named functions that change the color of the keys below
+const keyPlay = (key) => {
+  document.getElementById(key).style.backgroundColor = grey;
+};
 
+const keyReturn = (key) => {
+  document.getElementById(key).style.backgroundColor = '';
+};
 
 // Write a named function with event handler properties
 
@@ -41,7 +49,7 @@ startOver.hidden= true;
 startOver.onclick = function() {
   nextOne.hidden = false;
   startOver.hidden = true;
-   document.getElementById('word-one').innerHTML = 'HAP-';
+  document.getElementById('word-one').innerHTML = 'HAP-';
   document.getElementById('letter-note-one').innerHTML = 'G';
   document.getElementById('word-two').innerHTML = 'PY';
   document.getElementById('letter-note-two').innerHTML = 'G';
