@@ -26,7 +26,8 @@
   }
   
   .container {
-  
+    width: 90%;
+    margin: 0 auto;
   }
   
   .branding {
@@ -62,7 +63,9 @@
   /* Home Page Rulesets */
   
   #introduction {
-  
+    text-align: center;
+    margin-top: 15%;
+    margin-bottom: 50%;
   }
   
   #introduction h1 {
@@ -99,7 +102,10 @@
   .instrument {
     width: 90%;
     overflow: auto;
-  
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 2% 5%;
+    margin: 5% auto;
+    border-radius: 5px;
   }
   
   .image {
